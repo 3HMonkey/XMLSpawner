@@ -33,7 +33,7 @@ namespace Server.Gumps
 
             m_EntryIndex = entryindex;
 
-            from.CloseGump(typeof(XmlPartialCategorizedAddGump));
+            from.CloseGump<XmlPartialCategorizedAddGump>();
 
             AddPage(0);
 
@@ -239,7 +239,7 @@ namespace Server.Gumps
                                     };
 
                                     Timer.DelayCall(TimeSpan.Zero, new TimerStateCallback(XmlSpawnerGump.Refresh_Callback), new object[] { from });
-                                    //from.CloseGump(typeof(XmlSpawnerGump));
+                                    //from.CloseGump<XmlSpawnerGump>();
                                     //from.SendGump( new XmlSpawnerGump(xg.m_Spawner, xg.X, xg.Y, xg.m_ShowGump, xg.xoffset, xg.page, xg.Rentry) );
                                 }
                             }

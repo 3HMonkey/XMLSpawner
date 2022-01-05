@@ -39,7 +39,7 @@ namespace Server.Gumps
 
 			if(from == null || gauntlet == null || gauntlet.Deleted || gauntlet.Challenger == null) return;
 
-			from.CloseGump(typeof(TeamLMSGump));
+			from.CloseGump<TeamLMSGump>(); 
 
 			m_gauntlet = gauntlet;
 
@@ -265,11 +265,11 @@ namespace Server.Gumps
                 AddLabel( 130, height - 35, 68, String.Format(XmlPoints.GetText(from, 200593), gauntlet.Winner) );   // "Team {0} is the winner!"
             }
 
-			//AddButton( 30, height - 35, 0xFB7, 0xFB9, 0, GumpButtonType.Reply, 0 );
-			//AddLabel( 70, height - 35, 0, "Close" );
-			
-			// display the teams gump
-            from.CloseGump(typeof(TeamsGump));
+            //AddButton( 30, height - 35, 0xFB7, 0xFB9, 0, GumpButtonType.Reply, 0 );
+            //AddLabel( 70, height - 35, 0, "Close" );
+
+            // display the teams gump
+            from.CloseGump<TeamsGump>();
 			from.SendGump(new TeamsGump(m_gauntlet, from) );
 
 		}

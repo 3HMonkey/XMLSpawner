@@ -518,7 +518,7 @@ namespace Server.Gumps
                     if (m_questitem.RewardAttachment != null)
                     {
                         //state.Mobile.SendMessage("{0}",m_questitem.RewardAttachment.OnIdentify(state.Mobile));
-                        state.Mobile.CloseGump(typeof(DisplayAttachmentGump));
+                        state.Mobile.CloseGump<DisplayAttachmentGump>(); 
                         state.Mobile.SendGump(new DisplayAttachmentGump(state.Mobile, m_questitem.RewardAttachment.OnIdentify(state.Mobile)));
                     }
                     break;
@@ -665,7 +665,7 @@ namespace Server.Gumps
                     m_questitem.AddJournalEntry = entryid + ":" + entrytext;
                 }
                 // open a new journal gump
-                state.Mobile.CloseGump(typeof(XmlQuestStatusGump));
+                state.Mobile.CloseGump<XmlQuestStatusGump>();
                 state.Mobile.SendGump(new XmlQuestStatusGump(m_questitem, m_gumptitle, m_X, m_Y, m_solid, 1));
             }
         }

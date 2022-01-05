@@ -190,7 +190,7 @@ namespace Server.Engines.XmlSpawner2
 		{
 			if(e == null || e.Mobile == null) return;
 
-			e.Mobile.CloseGump(typeof(QuestLogGump));
+			e.Mobile.CloseGump<QuestLogGump>();
 			e.Mobile.SendGump(new QuestLogGump(e.Mobile));
 		}
 

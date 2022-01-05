@@ -248,7 +248,7 @@ namespace Server.Gumps
                 page = 0;
             }
 
-            owner.CloseGump(typeof(WhoGump));
+            owner.CloseGump<WhoGump>();
 
             m_Owner = owner;
             m_Category = category;

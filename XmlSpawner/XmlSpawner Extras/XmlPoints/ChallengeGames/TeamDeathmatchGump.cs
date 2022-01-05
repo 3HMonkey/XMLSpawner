@@ -39,7 +39,7 @@ namespace Server.Gumps
 
 			if(from == null || gauntlet == null || gauntlet.Deleted || gauntlet.Challenger == null) return;
 
-			from.CloseGump(typeof(TeamDeathmatchGump));
+			from.CloseGump<TeamDeathmatchGump>(); 
 
 			m_gauntlet = gauntlet;
 
@@ -303,7 +303,7 @@ namespace Server.Gumps
 			//AddLabel( 70, height - 35, 0, "Close" );
 			
 			// display the teams gump
-            from.CloseGump(typeof(TeamsGump));
+            from.CloseGump<TeamsGump>();
 			from.SendGump(new TeamsGump(m_gauntlet, from) );
 
 		}

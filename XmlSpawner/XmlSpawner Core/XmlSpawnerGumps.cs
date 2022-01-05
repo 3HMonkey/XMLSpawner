@@ -676,7 +676,7 @@ namespace Server.Mobiles
                 }
 
                 // close all of the currently opened spawner gumps
-                from.CloseGump(typeof(XmlSpawnerGump));
+                from.CloseGump<XmlSpawnerGump>();
 
                 // reopen the closed gumps from the gump collection
                 foreach (XmlSpawnerGump g in refresh)
@@ -1174,13 +1174,13 @@ namespace Server.Mobiles
                                 state.Mobile.SendGump(newg);
 
                                 // if no string has been entered then just use the full categorized add gump
-                                state.Mobile.CloseGump(typeof(XmlCategorizedAddGump));
+                                state.Mobile.CloseGump<XmlCategorizedAddGump>();
                                 state.Mobile.SendGump(new XmlCategorizedAddGump(state.Mobile, i, newg));
                             }
                             else
                             {
                                 // use the XmlPartialCategorizedAddGump
-                                state.Mobile.CloseGump(typeof(XmlPartialCategorizedAddGump));
+                                state.Mobile.CloseGump<XmlPartialCategorizedAddGump>();
 
                                 //Type [] types = (Type[])XmlPartialCategorizedAddGump.Match( categorystring ).ToArray( typeof( Type ) );
                                 ArrayList types = XmlPartialCategorizedAddGump.Match(categorystring);

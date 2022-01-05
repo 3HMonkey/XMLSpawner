@@ -172,7 +172,7 @@ namespace Server.Engines.XmlSpawner2
 			// if this player has an XmlQuestPoints attachment, find it
 			XmlQuestPoints p = (XmlQuestPoints)XmlAttach.FindAttachment(e.Mobile,typeof(XmlQuestPoints));
 
-			e.Mobile.CloseGump(typeof(TopQuestPlayersGump));
+			e.Mobile.CloseGump<TopQuestPlayersGump>();
 			e.Mobile.SendGump(new TopQuestPlayersGump(p));
 		}
 
